@@ -35,4 +35,9 @@ namespace JeuBaston {
 		return "<Personnage><nom></nom><age></age></Personnage>";
 	}
 
+	void Personnage::ajouterArme(Arme* nouvelleArme)
+	{
+		this->armesSecondaires.push_back(nouvelleArme);
+	}
+
 }

@@ -3,6 +3,7 @@
 #define PERSONNAGE_H_
 #include <iostream>
 #include "Arme.h"
+#include <vector>
 
 using namespace std;
 
@@ -12,12 +13,11 @@ namespace JeuBaston {
 	{
 	public:
 		Personnage();
-		Personnage(Arme* arme);
 		Personnage(string nom);
 		Personnage(string nom, int age);
 		Personnage(string nom, int age, int pv);
 
-		Arme arme;
+		
 
 		virtual ~Personnage();
 
@@ -47,10 +47,15 @@ namespace JeuBaston {
 			this->nom = nom;
 		}
 
+		void ajouterArme(Arme * nouvelleArme);
+
+
 	protected:
 		string nom;
 		int age;
 		int pv;
+		Arme * arme;
+		vector<Arme *> armesSecondaires;
 	};
 }
 
