@@ -19,6 +19,7 @@ namespace JeuBaston {
 
 	Magicien::~Magicien()
 	{
+		delete this->arme;
 	}
 
 	string Magicien::exporter()
