@@ -1,4 +1,5 @@
 #include "Personnage.h"
+#include <iostream>
 
 
 namespace JeuBaston {
@@ -20,6 +21,11 @@ namespace JeuBaston {
 	}
 
 	Personnage::~Personnage() {
+	}
+
+	string Personnage::exporter()
+	{
+		return "<Personnage><nom></nom><age></age></Personnage>";
 	}
 
 }

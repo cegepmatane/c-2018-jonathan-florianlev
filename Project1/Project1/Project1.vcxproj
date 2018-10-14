@@ -115,10 +115,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Guerrier.cpp" />
     <ClCompile Include="JeuBaston.cpp" />
+    <ClCompile Include="Magicien.cpp" />
     <ClCompile Include="Personnage.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Guerrier.h" />
+    <ClInclude Include="Magicien.h" />
     <ClInclude Include="Personnage.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

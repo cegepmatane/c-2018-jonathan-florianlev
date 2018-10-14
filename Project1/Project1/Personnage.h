@@ -1,4 +1,3 @@
-#pragma once
 
 #ifndef PERSONNAGE_H_
 #define PERSONNAGE_H_
@@ -6,6 +5,7 @@
 using namespace std;
 
 namespace JeuBaston {
+
 	class Personnage
 	{
 	public:
@@ -14,6 +14,9 @@ namespace JeuBaston {
 		Personnage(string nom, int age);
 
 		virtual ~Personnage();
+
+		virtual string exporter();
+
 
 		int getAge() const {
 			return age;
@@ -34,10 +37,7 @@ namespace JeuBaston {
 	protected:
 		string nom;
 		int age;
-
-
 	};
-
-
-
 }
+
+#endif /* PERSONNAGE_H_ */
