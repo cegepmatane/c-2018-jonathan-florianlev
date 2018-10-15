@@ -47,6 +47,13 @@ namespace JeuBaston {
 			this->nom = nom;
 		}
 
+		const Arme* getArme() const {
+			return arme;
+		}
+		void setArme(Arme* arme) {
+			this->arme = arme;
+		}
+
 		void ajouterArme(Arme * nouvelleArme);
 
 

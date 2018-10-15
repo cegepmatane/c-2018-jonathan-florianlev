@@ -1,5 +1,5 @@
 #include "Personnage.h"
-#include <iostream>
+#include <sstream>
 
 
 namespace JeuBaston {
@@ -32,7 +32,10 @@ namespace JeuBaston {
 
 	string Personnage::exporter()
 	{
-		return "<Personnage><nom></nom><age></age></Personnage>";
+		stringstream xml;
+		xml << "<Personnage><nom>" << this->nom <<"</nom><age>"<< this->age <<"</age></Personnage>";
+		return xml.str();
+
 	}
 
 	void Personnage::ajouterArme(Arme* nouvelleArme)
