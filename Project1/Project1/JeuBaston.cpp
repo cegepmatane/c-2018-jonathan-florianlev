@@ -1,6 +1,10 @@
 #include <fstream>
 #include <iostream>
 #include "Personnage.h"
+#include "Arme.h"
+#include "BouleGlace.h"
+#include "Epee.h"
+#include "Marteau.h"
 #include "Magicien.h"
 #include "Guerrier.h"
 
@@ -11,14 +15,25 @@ using namespace JeuBaston;
 int main() {
 	cout << "Bonjour" << endl; // prints !!!Hello World!!!
 
-	Personnage personnageSansPointeur;
-	Magicien objetMagicien("LaLa", 200);
-	personnageSansPointeur = (Personnage)objetMagicien;
-	cout << personnageSansPointeur.exporter() << endl; // Quelle fonction ??? Personnage::exporter()
+	Arme* bouleGlace;
+	bouleGlace = new BouleGlace(50);
+	Arme* epee;
+	epee = new Epee(200);
 
-	Personnage* personnage; // instance du pointeur vers un objet personnage
-	personnage = new Magicien("Lolo", 100);
-	cout << personnage->exporter() << endl; // Quelle fonction ??? Magicien::exporter
+	Personnage* magicienGlace; // instance du pointeur vers un objet personnage
+	magicienGlace = new Magicien("Gandalf", 100);
+	//cout << magicienGlace->exporter() << endl; // Quelle fonction ??? Magicien::exporter
+	magicienGlace->ajouterArme(bouleGlace);
+
+	Personnage* guerrier;
+	guerrier = new Guerrier("soldat", 100);
+	guerrier->ajouterArme(epee);
+
+	delete bouleGlace;
+	delete epee;
+	delete magicienGlace;
+	delete guerrier;
+	
 
 	return 0;
 	
