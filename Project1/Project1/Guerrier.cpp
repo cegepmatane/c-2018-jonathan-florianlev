@@ -1,5 +1,6 @@
 #include "Guerrier.h"
 #include <iostream>
+#include <sstream>
 
 
 namespace JeuBaston {
@@ -16,5 +17,12 @@ namespace JeuBaston {
 	Guerrier::~Guerrier()
 	{
 		delete this->arme;
+	}
+
+	string Guerrier::exporter()
+	{
+		stringstream xml;
+		xml << "<Guerrier><nom>" << this->nom << "</nom><age>" << this->age << "</age><force>" << this->force << "</force></Guerrier>";
+		return xml.str();
 	}
 }

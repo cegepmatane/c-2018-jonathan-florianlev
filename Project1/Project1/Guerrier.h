@@ -14,6 +14,8 @@ namespace JeuBaston {
 		Guerrier(string nom, int force);
 		Guerrier(string nom, int force, int age);
 		virtual ~Guerrier();
+		string exporter();
+
 
 		int getForce() const {
 			return force;
