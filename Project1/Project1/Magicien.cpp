@@ -1,5 +1,6 @@
 #include "Magicien.h"
 #include <iostream>
+#include <sstream>
 
 
 namespace JeuBaston {
@@ -24,6 +25,8 @@ namespace JeuBaston {
 
 	string Magicien::exporter()
 	{
-		return "<Magicien><nom></nom><age></age><magie></magie></Magicien>";
+		stringstream xml;
+		xml << "<Magicien><nom>" << this->nom << "</nom><age>" << this->age << "</age><magie>" << this->magie << "</magie></Magicien>";
+		return xml.str();
 	}
 }
