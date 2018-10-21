@@ -116,15 +116,21 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Arme.cpp" />
+    <ClCompile Include="BouleGlace.cpp" />
+    <ClCompile Include="Epee.cpp" />
     <ClCompile Include="Guerrier.cpp" />
     <ClCompile Include="JeuBaston.cpp" />
     <ClCompile Include="Magicien.cpp" />
+    <ClCompile Include="Marteau.cpp" />
     <ClCompile Include="Personnage.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Arme.h" />
+    <ClInclude Include="BouleGlace.h" />
+    <ClInclude Include="Epee.h" />
     <ClInclude Include="Guerrier.h" />
     <ClInclude Include="Magicien.h" />
+    <ClInclude Include="Marteau.h" />
     <ClInclude Include="Personnage.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
