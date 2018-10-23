@@ -10,13 +10,20 @@
 #include <conio.h>;
 #include <chrono>;
 #include <thread>;
+#include <SFML/Graphics.hpp>;
 
+
+using namespace sf;
 
 using namespace std;
 using namespace JeuBaston;
 
 int main() {
 	cout << "Bonjour" << endl; // prints !!!Hello World!!!
+
+
+	vector<Personnage*> listePersonnages;
+
 
 	Arme* bouleGlace;
 	bouleGlace = new BouleGlace(50);
@@ -25,12 +32,15 @@ int main() {
 
 	Personnage* magicienGlace; // instance du pointeur vers un objet personnage
 	magicienGlace = new Magicien("Gandalf", 100);
-	cout << magicienGlace->exporter() ;
 	magicienGlace->ajouterArme(bouleGlace);
+	listePersonnages.push_back(magicienGlace);
+	//cout << magicienGlace->exporter() ;
 
 	Personnage* guerrier;
 	guerrier = new Guerrier("soldat", 100);
 	guerrier->ajouterArme(epee);
+	listePersonnages.push_back(guerrier);
+
 
 	ofstream fichierBaston;
 	fichierBaston.open("../data/baston.xml");
@@ -44,7 +54,7 @@ int main() {
 	//cout << "Première ligne : " << ligne;
 	unsigned int dernierePosition = 0;
 	unsigned int positionPointVirgule = 0;
-	while (!fichierPersonnages.eof())
+	/*while (!fichierPersonnages.eof())
 	{
 		getline(fichierPersonnages, ligne);
 		cout << "Ligne : " << ligne << endl;
@@ -67,41 +77,69 @@ int main() {
 		//while(string::npos != dernierePosition);
 		while (0 != dernierePosition); // 0 car -1 de find +1 = 0
 		cout << endl;
+		*/
+		
 
+		//Boucle jeu
+		
+		cout << "TEST";
+
+		/*sf::RenderWindow window(sf::VideoMode(200, 200), "SFML works!");
+		sf::CircleShape shape(100.f);
+		shape.setFillColor(sf::Color::Green);
+
+		while (window.isOpen())
+		{
+			sf::Event event;
+			while (window.pollEvent(event))
+			{
+				if (event.type == sf::Event::Closed)
+					window.close();
+			}
+
+			window.clear();
+			window.draw(shape);
+			window.display();
+		}*/
+		int tour = 0;
+		int touche;
+		bool gameIsRunning = true;
+
+		float pas = 10;
+		while (gameIsRunning)
+		{
+			
+			this_thread::sleep_for(chrono::milliseconds(1000 / 60));
+			if (_kbhit())
+			{
+				touche = _getch();
+				//cout << "touche " << touche << " " << tour << endl;
+
+					switch (touche)
+					{
+					case 'a':
+						gameIsRunning = false;
+						break;
+					case 'z':
+						guerrier->deplacer(0, -pas);
+						break;
+					}
+			}
+				
+		}
+			while (_kbhit()) _getch();
+			//cout << "tour " << tour << endl;
+			tour++;
+		
 		delete bouleGlace;
 		delete epee;
 		delete magicienGlace;
 		delete guerrier;
 
-		//Boucle jeu
-		int tour = 0;
-		int touche;
-		bool gameIsRunning = true;
-		while (gameIsRunning)
-		{
-			// PREMIER PROBLEME-SOLUTION : dormir sans occuper les ressources
-			this_thread::sleep_for(chrono::milliseconds(1000 / 60));
-			// SECOND PROBLEME-SOLUTION : lire les entrées sans bloquer la boucle
-			if (_kbhit())
-			{
-				touche = _getch();
-				cout << "touche " << touche << " " << tour << endl;
-				switch (touche)
-				{
-				case 'q':
-					gameIsRunning = false;
-					break;
-				}
-			}
-			while (_kbhit()) _getch();
-			//cout << "tour " << tour << endl;
-			tour++;
-		}
 
 		//system("pause");
 		return 0;
 
 
 
-	}
 }

@@ -30,6 +30,14 @@ namespace JeuBaston {
 	Personnage::~Personnage() {
 	}
 
+	void Personnage::deplacer(float deplacementX, float deplacementY)
+	{
+		this->x += deplacementX;
+		this->y += deplacementY;
+		cout << deplacementX;
+		cout << deplacementY;
+	}
+
 	string Personnage::exporter()
 	{
 		stringstream xml;

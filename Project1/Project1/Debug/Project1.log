@@ -1,5 +1,14 @@
-﻿  JeuBaston.cpp
+﻿  Arme.cpp
+  BouleGlace.cpp
+  Epee.cpp
+  Guerrier.cpp
+  JeuBaston.cpp
 c:\users\florian\documents\c++\projet-cpp-2018-florianlev\project1\project1\jeubaston.cpp(10): warning C4067: jetons inattendus après la directive du préprocesseur - saut de ligne attendu
 c:\users\florian\documents\c++\projet-cpp-2018-florianlev\project1\project1\jeubaston.cpp(11): warning C4067: jetons inattendus après la directive du préprocesseur - saut de ligne attendu
 c:\users\florian\documents\c++\projet-cpp-2018-florianlev\project1\project1\jeubaston.cpp(12): warning C4067: jetons inattendus après la directive du préprocesseur - saut de ligne attendu
-  Project1.vcxproj -> C:\Users\florian\Documents\c++\projet-cpp-2018-florianlev\Project1\Debug\Project1.exe
+c:\users\florian\documents\c++\projet-cpp-2018-florianlev\project1\project1\jeubaston.cpp(80): warning C4101: 'touche' : variable locale non référencée
+  Magicien.cpp
+  Marteau.cpp
+  Personnage.cpp
+  Génération de code en cours...
+LINK : fatal error LNK1104: impossible d'ouvrir le fichier 'sfml-graphics.lib, sfml-window.lib, sfml-system.lib'

@@ -55,14 +55,18 @@ namespace JeuBaston {
 		}
 
 		void ajouterArme(Arme * nouvelleArme);
+		void deplacer(float deplacementX, float deplacementY);
 
 
 	protected:
 		string nom;
 		int age;
 		int pv;
+		int x;
+		int y;
 		Arme * arme;
 		vector<Arme *> armesSecondaires;
+
 	};
 }
 
