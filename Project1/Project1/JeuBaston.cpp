@@ -23,12 +23,15 @@ int main() {
 
 
 	vector<Personnage*> listePersonnages;
+	vector<Arme*> listeArmes;
 
 
 	Arme* bouleGlace;
 	bouleGlace = new BouleGlace(50);
+	listeArmes.push_back(bouleGlace);
 	Arme* epee;
 	epee = new Epee(200);
+	listeArmes.push_back(epee);
 
 	Personnage* magicienGlace; // instance du pointeur vers un objet personnage
 	magicienGlace = new Magicien("Gandalf", 100);
@@ -104,8 +107,10 @@ int main() {
 		int tour = 0;
 		int touche;
 		bool gameIsRunning = true;
+		int position = 0;
 
 		float pas = 10;
+
 		while (gameIsRunning)
 		{
 			
@@ -122,6 +127,17 @@ int main() {
 						break;
 					case 'z':
 						guerrier->deplacer(0, -pas);
+						break;
+					
+					case 32: //espace
+						cout << "On change de perso !" << endl;
+						position++;
+						if (position >= listePersonnages.size()) {
+							position = 0;
+						}
+						;
+						cout << "Le personnage : " << listePersonnages.at(position)->getNom();
+						cout << "entre en jeu!" << endl;
 						break;
 					}
 			}

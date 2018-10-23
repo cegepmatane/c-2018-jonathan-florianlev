@@ -40,6 +40,8 @@ namespace JeuBaston {
 		}
 
 		const string& getNom() const {
+			cout << nom << endl;
+
 			return nom;
 		}
 
