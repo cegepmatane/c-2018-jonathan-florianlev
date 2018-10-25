@@ -24,9 +24,11 @@ namespace JeuBaston {
 		void setForce(int force) {
 			this->force = force;
 		}
-
+		
 	protected:
 		int force;
+		int x;
+		int y;
 	};
 }
 #endif

@@ -56,9 +56,17 @@ namespace JeuBaston {
 			this->arme = arme;
 		}
 
+		int getX() const {
+			return x;
+		}
+		int getY() const {
+			return y;
+		}
+
+		void setPositions(int x, int y);
 		void ajouterArme(Arme * nouvelleArme);
 		void deplacer(float deplacementX, float deplacementY);
-
+		void attaquer(Arme * arme);
 
 	protected:
 		string nom;

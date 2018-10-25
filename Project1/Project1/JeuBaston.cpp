@@ -36,12 +36,15 @@ int main() {
 	Personnage* magicienGlace; // instance du pointeur vers un objet personnage
 	magicienGlace = new Magicien("Gandalf", 100);
 	magicienGlace->ajouterArme(bouleGlace);
+	magicienGlace->setPositions(100, 100);
 	listePersonnages.push_back(magicienGlace);
 	//cout << magicienGlace->exporter() ;
 
 	Personnage* guerrier;
 	guerrier = new Guerrier("soldat", 100);
 	guerrier->ajouterArme(epee);
+	guerrier->setPositions(300, 300);
+	//Guerrier* guerrier = new Guerrier();
 	listePersonnages.push_back(guerrier);
 
 
@@ -122,13 +125,35 @@ int main() {
 
 					switch (touche)
 					{
+
+						//quitter
 					case 'a':
 						gameIsRunning = false;
 						break;
+
+						// deplacement
 					case 'z':
+						//cout << guerrier->getX();
+						cout << "haut" << endl;
 						guerrier->deplacer(0, -pas);
 						break;
 					
+					case 's':
+						cout << "bas" << endl;
+						guerrier->deplacer(0, pas);
+
+						break;
+					case 'd':
+						cout << "droite" << endl;
+						guerrier->deplacer(-pas, 0);
+
+						break;
+					case 'q':
+						cout << "gauche" << endl;
+						guerrier->deplacer(pas, 0);
+
+
+					// changer de personnage
 					case 32: //espace
 						cout << "On change de perso !" << endl;
 						position++;
@@ -138,8 +163,14 @@ int main() {
 						;
 						cout << "Le personnage : " << listePersonnages.at(position)->getNom();
 						cout << "entre en jeu!" << endl;
+						cout << "PV : " << listePersonnages.at(position)->getPv();
 						break;
+					//attaquer
+					case 'm':
+						cout << "attaquer" << endl;
+
 					}
+
 			}
 				
 		}

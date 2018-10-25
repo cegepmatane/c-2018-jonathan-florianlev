@@ -4,8 +4,8 @@ c:\users\florian\documents\c++\projet-cpp-2018-florianlev\project1\project1\jeub
 c:\users\florian\documents\c++\projet-cpp-2018-florianlev\project1\project1\jeubaston.cpp(12): warning C4067: jetons inattendus après la directive du préprocesseur - saut de ligne attendu
 c:\users\florian\documents\c++\projet-cpp-2018-florianlev\project1\project1\jeubaston.cpp(13): warning C4067: jetons inattendus après la directive du préprocesseur - saut de ligne attendu
   Génération de code en cours
-  1 of 375 functions ( 0.3%) were compiled, the rest were copied from previous compilation.
+  1 of 378 functions ( 0.3%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
-    0 functions had inline decision re-evaluated but remain unchanged
+    3 functions had inline decision re-evaluated but remain unchanged
   Fin de la génération du code
   Project1.vcxproj -> C:\Users\florian\Documents\c++\projet-cpp-2018-florianlev\Project1\x64\Release\Project1.exe

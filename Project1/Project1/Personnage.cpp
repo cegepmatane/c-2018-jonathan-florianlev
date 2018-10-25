@@ -13,12 +13,12 @@ namespace JeuBaston {
 	Personnage::Personnage(string nom)
 	{
 		this->age = 0;
-		this->pv = 0;
+		this->pv = 50;
 		this->nom = nom;
 	}
 	Personnage::Personnage(string nom, int age) {
 		this->age = age;
-		this->pv = 0;
+		this->pv = 50;
 		this->nom = nom;
 	}
 	Personnage::Personnage(string nom, int age, int pv) {
@@ -26,17 +26,27 @@ namespace JeuBaston {
 		this->nom = nom;
 		this->pv = pv;
 	}
-
 	Personnage::~Personnage() {
+	}
+
+
+	void Personnage::setPositions(int x, int y) {
+		this->x = x;
+		this->y = y;
 	}
 
 	void Personnage::deplacer(float deplacementX, float deplacementY)
 	{
 		this->x += deplacementX;
 		this->y += deplacementY;
-		cout << deplacementX;
-		cout << deplacementY;
 	}
+
+	void Personnage::attaquer(Arme * arme) {
+		int degats = arme->getDegats();
+		this->pv -= degats;
+	}
+
+
 
 	string Personnage::exporter()
 	{

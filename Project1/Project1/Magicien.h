@@ -22,8 +22,12 @@ namespace JeuBaston {
 			this->magie = magie;
 		}
 
+		
+
 	protected:
 		int magie;
+		int x;
+		int y;
 
 	};
 
