@@ -90,9 +90,13 @@ int main() {
 		
 		cout << "TEST";
 
-		/*sf::RenderWindow window(sf::VideoMode(200, 200), "SFML works!");
-		sf::CircleShape shape(100.f);
-		shape.setFillColor(sf::Color::Green);
+		sf::RenderWindow window(sf::VideoMode(650, 450), "SFML works!");
+		string cheminImageBackground = "C:\\images\\background.jpg";
+		Texture ambianceHerbe;
+		Sprite * scene = NULL;
+		if (ambianceHerbe.loadFromFile(cheminImageBackground)) {
+			scene = new Sprite(ambianceHerbe);
+		}
 
 		while (window.isOpen())
 		{
@@ -104,9 +108,12 @@ int main() {
 			}
 
 			window.clear();
-			window.draw(shape);
+			//window.display();
+			if (scene) window.draw(*scene);
+
 			window.display();
-		}*/
+
+		}
 		int tour = 0;
 		int touche;
 		bool gameIsRunning = true;
@@ -114,7 +121,7 @@ int main() {
 
 		float pas = 10;
 
-		while (gameIsRunning)
+		/*while (gameIsRunning)
 		{
 			
 			this_thread::sleep_for(chrono::milliseconds(1000 / 60));
@@ -177,7 +184,7 @@ int main() {
 			while (_kbhit()) _getch();
 			//cout << "tour " << tour << endl;
 			tour++;
-		
+		*/
 		delete bouleGlace;
 		delete epee;
 		delete magicienGlace;
