@@ -3,8 +3,12 @@
 #define PERSONNAGE_H_
 #include <iostream>
 #include "Arme.h"
-#include <vector>
+#include "Accessoire.h"
 
+#include <vector>
+#include <SFML/Graphics.hpp>
+
+using namespace sf;
 using namespace std;
 
 namespace JeuBaston {
@@ -56,6 +60,10 @@ namespace JeuBaston {
 			this->arme = arme;
 		}
 
+		const string& getAccessoire() const {
+			return accessoire->getNom();
+		}
+
 		int getX() const {
 			return x;
 		}
@@ -63,10 +71,13 @@ namespace JeuBaston {
 			return y;
 		}
 
+
 		void setPositions(int x, int y);
 		void ajouterArme(Arme * nouvelleArme);
+		void ajouterAccessoire(Accessoire * nouvelleAccessoire);
 		void deplacer(float deplacementX, float deplacementY);
 		void attaquer(Arme * arme);
+		virtual void afficher(RenderWindow& fenetre);
 
 	protected:
 		string nom;
@@ -74,8 +85,13 @@ namespace JeuBaston {
 		int pv;
 		int x;
 		int y;
+		Texture * texture = NULL;
+		Sprite * illustration = NULL;
 		Arme * arme;
+		Accessoire * accessoire;
 		vector<Arme *> armesSecondaires;
+		vector<Accessoire *> accessoireSecondaire;
+
 
 	};
 }

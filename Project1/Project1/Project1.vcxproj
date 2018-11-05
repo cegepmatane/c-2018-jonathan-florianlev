@@ -131,7 +131,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Accessoire.cpp" />
+    <ClCompile Include="AccessoireVide.cpp" />
     <ClCompile Include="Arme.cpp" />
+    <ClCompile Include="Bouclier.cpp" />
     <ClCompile Include="BouleGlace.cpp" />
     <ClCompile Include="Epee.cpp" />
     <ClCompile Include="Guerrier.cpp" />
@@ -141,7 +144,10 @@
     <ClCompile Include="Personnage.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Accessoire.h" />
+    <ClInclude Include="AccessoireVide.h" />
     <ClInclude Include="Arme.h" />
+    <ClInclude Include="Bouclier.h" />
     <ClInclude Include="BouleGlace.h" />
     <ClInclude Include="Epee.h" />
     <ClInclude Include="Guerrier.h" />

@@ -27,6 +27,8 @@ namespace JeuBaston {
 		this->pv = pv;
 	}
 	Personnage::~Personnage() {
+		delete this->illustration;
+		delete this->texture;
 	}
 
 
@@ -39,6 +41,7 @@ namespace JeuBaston {
 	{
 		this->x += deplacementX;
 		this->y += deplacementY;
+		this->illustration->setPosition(this->x, this->y);
 	}
 
 	void Personnage::attaquer(Arme * arme) {
@@ -59,6 +62,17 @@ namespace JeuBaston {
 	void Personnage::ajouterArme(Arme* nouvelleArme)
 	{
 		this->armesSecondaires.push_back(nouvelleArme);
+		this->arme = arme;
 	}
 
-}
+	void Personnage::ajouterAccessoire(Accessoire* nouvelleAccessoire) {
+		this->accessoireSecondaire.push_back(nouvelleAccessoire);
+		this->accessoire = accessoire;
+	}
+
+	void Personnage::afficher(RenderWindow& fenetre)
+	{
+		fenetre.draw(*illustration);
+	}
+
+}	
