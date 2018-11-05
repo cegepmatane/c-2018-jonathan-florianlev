@@ -24,7 +24,9 @@ using namespace std;
 using namespace JeuBaston;
 
 int main() {
-	cout << "Bonjour" << endl; // prints !!!Hello World!!!
+	cout << "COUCOU POUR GAGNER SORTEZ DE L'ECRAN VERS LE HAUT \n POUR PERDRE APPUYER SUR J \n" << endl; // prints !!!Hello World!!!
+	cout << "POUR CHANGER DE PERSONNAGE APPUYER SUR ESPACE \n" << endl;
+	cout << "POUR ACTIVER LE BOUCLIER APPUYEZ SUR J \n" << endl;
 
 
 	vector<Personnage*> listePersonnages;
@@ -103,6 +105,7 @@ int main() {
 	sf::Vector2f* vecteurBas = new sf::Vector2f(0, 20);
 	sf::Vector2f* vecteurDroite = new sf::Vector2f(20, 0);
 	sf::Vector2f* vecteurGauche = new sf::Vector2f(-20, 0);
+	
 
 	ofstream fichierBaston;
 	fichierBaston.open("../data/baston.xml");
@@ -143,8 +146,7 @@ int main() {
 		
 
 		//Boucle jeu
-		
-		cout << "TEST";
+
 
 		sf::RenderWindow window(sf::VideoMode(1200, 800), "SFML works!");
 		string cheminImageBackground = "C:\\Users\\florian\\Documents\\c++\\projet-cpp-2018-florianlev\\Project1\\images\\background.jpg";
@@ -157,7 +159,9 @@ int main() {
 		int tour = 0;
 		int touche;
 
-		while (window.isOpen() & gameIsRunning)
+		bool victoire;
+		bool defaite;
+		while (window.isOpen())
 		{
 			sf::Event event;
 			while (window.pollEvent(event))
@@ -228,11 +232,25 @@ int main() {
 					window.draw(spriteBouclier);
 
 					break;
+
+
+				case 'j':
+					defaite = true;
+					window.close();
+
 				}
+
+			
+
 					
 			}
 			while (_kbhit()) {
 				_getch();
+			}
+
+			if (spriteJoueur.getPosition().y == -160) {
+				victoire = true;
+				window.close();
 			}
 			tour++;
 			if (scene) window.draw(*scene);
@@ -242,8 +260,16 @@ int main() {
 			window.display();
 
 		}
-	
 
+		if (victoire) {
+			cout << "C'EST GAGNER !!" << endl;
+		}
+		else if (defaite) {
+			cout << "PERDUUU" << endl;
+		}
+		_getch();
+	
+		
 
 		float pas = 10;
 
