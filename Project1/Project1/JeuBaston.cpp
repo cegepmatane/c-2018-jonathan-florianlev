@@ -184,12 +184,12 @@ int main() {
 					break;
 				
 				
-				case 'z':
+				case 'w':
 					spriteJoueur.move(*vecteurHaut);
 					break;
 				
 
-				case 'q':
+				case 'a':
 					spriteJoueur.move(*vecteurGauche);
 					break;
 
